@@ -4,9 +4,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
  <div class="container">
+
  <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
+	
 	$(document).ready(function() {
 		$(".packagediv").css("width","970px");
 		$(".packagediv").css("width","970px");
@@ -18,27 +20,38 @@
 		$(".packageimg").css("width","300px")
 		
 		$(".title").css("position","absolute");
-		$(".title").css("left","850px");
-		$(".title").css("top","0px");
+		$(".title").css("left","380px");
+		$(".title").css("top","25px");
+		$(".title").css("font-size","40px");
 		
 		$(".loc").css("position","absolute");
-		$(".loc").css("left","830px");
-		$(".loc").css("top","50px");
+		$(".loc").css("left","380px");
+		$(".loc").css("top","100px");
+		$(".loc").css("font-size","20px");
 		
 		$(".term").css("position","absolute");
-		$(".term").css("left","830px");
-		$(".term").css("top","74px");
+		$(".term").css("left","650px");
+		$(".term").css("top","90px");
+		$(".term").css("width","250px");
+		$(".term").css("font-size","20px");
 		
 		$(".price").css("position","absolute");
-		$(".price").css("left","1000px");
-		$(".price").css("top","30px");
+		$(".price").css("left","950px");
+		$(".price").css("top","77px");
 		$(".price").css("font-size","20px");
-		$(".price").css("width","150px");
-		
+		$(".price").css("width","250px");
+			
+		$(".testEle").css("color","red");
+	
 		});
-		</script>
+		
+		setInterval(function(){
+		$(".testEle").toggle();
+		}, 500);
+	</script>
 
-        <!-- Page Heading/Breadcrumbs -->
+
+		<!-- Page Heading/Breadcrumbs -->
         
         <div class="row">
             <div class="col-lg-12">
@@ -58,8 +71,10 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
+       
         <c:forEach var="i" items="${Plist}">
         <div class="packagediv">
+        
             <div class ="packagelayout">
                 <a href="PackageThirdListController">
                     <img class="packageimg" src="images/${i.image}.jpg" alt="package01">
@@ -69,9 +84,8 @@
                 </h3>
                			<p class = "loc">여행 지역 : ${i.loc}</p>
                			<p class = "term">여행 기간 : ${i.term}</p>
-                		<p class = "price">가격 : ${i.price}</p>
-                		
-                
+                		<p class = "price"><span>가격 :</span><span class="testEle">${i.price}</span></p>	
+            </div>
             </div>
             </c:forEach>
            
