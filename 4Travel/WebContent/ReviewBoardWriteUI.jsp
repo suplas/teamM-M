@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-   <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
@@ -19,6 +19,6 @@
 </head>
 <body>
 <jsp:include  page="maininclude/navi.jsp" flush="true"/>
-<jsp:include page="board/reviewBoard.jsp" flush="true"/>
+<jsp:include page="board/reviewBoardWriteUI.jsp" flush="true"/>
 </body>
 </html>
