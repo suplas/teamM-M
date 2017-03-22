@@ -44,7 +44,7 @@
 						class="caret"></b></a>
 					<ul id="ulTagLoc" class="dropdown-menu">
 						<li class="liTagLoc"><a href="ReviewBoardController?travelNation=${travelNation}&orders=${orders}&searchName=${searchName}&searchValue=${searchValue}">전체보기</a></li>
-						<c:forEach items="${locList}" var="loc">
+						<c:forEach items="${locList}"  var="loc">
 						<li class="liTagLoc"><a href="ReviewBoardController?travelNation=${travelNation}&travelLoc=${loc}&orders=${orders}&searchName=${searchName}&searchValue=${searchValue}">${loc}</a></li>
 						</c:forEach>
 					</ul>
@@ -81,6 +81,9 @@
 						<input type="submit" value="검색" height="5px">
 					</form>
 				</li>
+				<li>
+				<a href="ReviewBoardWriteUIController">후기 작성하기</a>
+				</li>
 			</ol>
 		</div>
 	</div>
@@ -105,7 +108,7 @@
 			</c:if>
 			<div class="col-md-6">
 				<h3>
-					<a href="blog-post.html">${dto.title}${dto.num}</a>
+					<a href="ReviewBoardDetailController?num=${dto.num}">${dto.title}${dto.num}</a>
 				</h3>
 				<p>
 					by <a href="#">${dto.userid}</a>
@@ -152,13 +155,15 @@
 	<hr>
 
 	<!-- Footer -->
-	<footer>
-		<div class="row">
-			<div class="col-lg-12">
-				<p>Copyright &copy; team M&amp;M(Jung Minwoo,LeeMinsub) 2017</p>
-			</div>
-		</div>
-	</footer>
+	 <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <font color="gray"><p>ForTravel 대표이사: team M&M 서울 강남구 역삼동  에이콘아카데미(주)에이콘이즈</p>
+						<p>대표전화: 02-000-0000 팩스:02-000-0000</p>
+                   		 <p>Copyright &copy; team M&amp;M(Jung MinWoo,Lee Min Sub) All Rights Reserved.</p></font>
+                </div>
+            </div>
+        </footer>
 
 </div>
 <!-- /.container -->

@@ -21,7 +21,7 @@ import com.exception.CommonException;
 public class ReviewBoardDetailController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String num=request.getParameter("num");
-		ReviewBoardBiz biz=new ReviewBoardBiz();
+		ReviewBoardBiz biz=new ReviewBoardBiz(); 
 		
 		ReviewBoardDTO dto = biz.boardRetrieve(Integer.parseInt(num));
 		request.setAttribute("boardRetrieve", dto);
