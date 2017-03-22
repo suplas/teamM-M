@@ -18,24 +18,33 @@
 		$(".packageimg").css("width","300px")
 		
 		$(".title").css("position","absolute");
-		$(".title").css("left","850px");
-		$(".title").css("top","0px");
+		$(".title").css("left","450px");
+		$(".title").css("top","60px");
+		$(".title").css("font-size","30px");
 		
 		$(".loc").css("position","absolute");
-		$(".loc").css("left","830px");
-		$(".loc").css("top","50px");
+		$(".loc").css("left","580px");
+		$(".loc").css("top","83px");
+		$(".loc").css("font-size","20px");
 		
 		$(".term").css("position","absolute");
-		$(".term").css("left","830px");
-		$(".term").css("top","74px");
+		$(".term").css("left","780px");
+		$(".term").css("top","85px");
+		$(".term").css("font-size","20px");
+		
 		
 		$(".price").css("position","absolute");
-		$(".price").css("left","1000px");
-		$(".price").css("top","30px");
+		$(".price").css("left","980px");
+		$(".price").css("top","73px");
 		$(".price").css("font-size","20px");
 		$(".price").css("width","150px");
 		
+		$(".testEle").css("color","red");
 		});
+	
+		setInterval(function(){
+		$(".testEle").toggle();
+		}, 500);
 		</script>
 
         <!-- Page Heading/Breadcrumbs -->
@@ -58,6 +67,7 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
+        
         <c:forEach var="i" items="${Plist}">
         <div class="packagediv">
             <div class ="packagelayout">
@@ -69,9 +79,8 @@
                 </h3>
                			<p class = "loc">여행 지역 : ${i.loc}</p>
                			<p class = "term">여행 기간 : ${i.term}</p>
-                		<p class = "price">가격 : ${i.price}</p>
-                		
-                
+                		<p class = "price"><span>가격 : </span><span class="testEle">${i.price}</span></p>
+  
             </div>
             </c:forEach>
            
