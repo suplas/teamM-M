@@ -1,7 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
  <div class="container">
-
+ <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".newpackage").css("width","330px");
+		$(".newpackage").css("height","200px");
+		
+		$(".testEle").css("color","red");
+		});
+	setInterval(function(){
+		$(".testEle").toggle();
+		}, 500);
+			</script>
         <!-- Marketing Icons Section -->
          <div class="row">
             <div class="col-lg-12">
@@ -12,11 +24,16 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> 패키지</h4>
+                        <h4><i class="fa fa-fw fa-check"></i><span class="testEle">특가 패키지</span></h4>
                     </div>
                     <div class="panel-body">
-                        <p>패키지 이미지</p>
-                        <a href="#" class="btn btn-default">보러가기</a>
+                    <a href="PackageThirdListController?packagename=${Plist[0].packagename}">
+                        <p><img  class="newpackage" src="images/${Plist[0].doorimg}.jpg"></img></a><br><br>
+                        	패키지 명 : ${Plist[0].packagename}<br>
+                        	출발날짜 : ${Plist[0].startdate}<br>
+                        	도착날짜 : ${Plist[0].lastdate}<br>
+                        	<span>가격 : </span><span class="testEle">${Plist[0].price}</span></p>
+                        <a href="PackageThirdListController?packagename=${Plist[0].packagename}" class="btn btn-default">보러가기</a>
                     </div>
                 </div>
             </div>
