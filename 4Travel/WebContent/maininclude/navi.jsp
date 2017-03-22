@@ -41,7 +41,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="Home">4Travel</a>
+			<a class="navbar-brand"  href="Home">4Travel</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		

@@ -29,7 +29,7 @@
                 <hr>
 
                 <!-- Date/Time -->
-                <p><i class="fa fa-clock-o"></i> Posted on ${boardRetrieve.writeday}</p>
+                <p><i class="fa fa-clock-o"></i>  Posted on ${boardRetrieve.writeday}</p>
 
                 <hr>
 
@@ -163,10 +163,12 @@
         <hr>
 
         <!-- Footer -->
-        <footer>
+         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <font color="gray"><p>ForTravel 대표이사: team M&M 서울 강남구 역삼동  에이콘아카데미(주)에이콘이즈</p>
+						<p>대표전화: 02-000-0000 팩스:02-000-0000</p>
+                   		 <p>Copyright &copy; team M&amp;M(Jung MinWoo,Lee Min Sub) All Rights Reserved.</p></font>
                 </div>
             </div>
         </footer>
