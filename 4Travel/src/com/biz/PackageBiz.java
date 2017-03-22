@@ -12,11 +12,11 @@ import com.exception.CommonException;
 public class PackageBiz {
 	String namespace="com.fortravel.PackageMapper.";
 	
-	public List<PackageThirdDTO> packageAllList() throws CommonException{
+	public List<PackageThirdDTO> packageAllList(String packagename) throws CommonException{
 		SqlSession session=MySqlSessionFactory.openSession();
-		List<PackageThirdDTO> list=null;
+		List<PackageThirdDTO> list = null;
 		try{
-		list=session.selectList(namespace+"packageAllList");
+		list = session.selectList(namespace+"packageAllList",packagename);
 		
 		}catch(Exception e){
 			e.printStackTrace();
@@ -26,12 +26,12 @@ public class PackageBiz {
 		}
 		return list;
 	}
-	public List<PackageFirstDTO> packageList(String packagename) throws CommonException{
+	public List<PackageThirdDTO> packageList(String city) throws CommonException{
 		SqlSession session=MySqlSessionFactory.openSession();
-		List<PackageFirstDTO> 
+		List<PackageThirdDTO> 
 		list = null;
 		try{
-		list = session.selectList(namespace+"packageList",packagename);
+		list = session.selectList(namespace+"packageList",city);
 		
 		}catch(Exception e){
 			e.printStackTrace();

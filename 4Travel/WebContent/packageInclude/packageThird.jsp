@@ -1,19 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">${Plist[0].packagename}
-                    <small>${Plist[0].stay}</small>
+            <c:forEach var = "i" items="${Plist}">
+                <h1 class="page-header">${i.packagename}
+                    <small>${i.city}</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="Home">Home</a>
                     </li>
-                    <li><a href="#">패키지</a>
-                    <li><a href="#">일본</a>
-                    <li class="active">지역명</li>
+                    <li><a href="PackageFirstALLController?loc=${i.loc}">${i.loc}</a>
+                    <li class="active">${i.city}</li>
                 </ol>
             </div>
         </div>
@@ -35,13 +38,13 @@
                     
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="img-responsive" src="${Plist[0].image1}" alt="그림1">
+                            <img class="img-responsive" src="images/${i.image1}.png" alt="그림1">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="${Plist[0].image2}" alt="그림2">
+                            <img class="img-responsive" src="images/${i.image2}.png" alt="그림2">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="${Plist[0].image3}" alt="그림3">
+                            <img class="img-responsive" src="images/${i.image3}.png" alt="그림3">
                         </div>
                     </div>
 
@@ -56,22 +59,22 @@
             </div>
 
             <div class="col-md-4">
-                <h3>${Plist[0].packagename}</h3>
-                <p>${Plist[0].term}&nbsp;&nbsp;${Plist[0].airline}</p>
-                <p><font color="pink">한국출발 </font>${Plist[0].startdate}&nbsp;&nbsp;<font color="blue">${Plist[0].startairplaneid}</font></p> 
-               <p><font color="pink">한국도착</font> ${Plist[0].lastdate}&nbsp;&nbsp;<font color="blue">${Plist[0].lastairplaneid}</font></p> 
+                <h3>${i.packagename}</h3>
+                <p>${i.term}&nbsp;&nbsp;${i.airline}</p>
+                <p><font color="pink">한국출발 </font>${i.startdate}&nbsp;&nbsp;<font color="blue">${i.startairplaneid}</font></p> 
+               <p><font color="pink">한국도착</font> ${i.lastdate}&nbsp;&nbsp;<font color="blue">${i.lastairplaneid}</font></p> 
                
                 <ul>
-                	<li>여행사 : ${Plist[0].company}</li>
-                    <li>최소 출발 인원 : ${Plist[0].minpersonnel}</li>
-                    <li>예약가능 인원 : ${Plist[0].presentreservation}/${Plist[0].personnel}</li>
-                    <li>가격 : ${Plist[0].price}</li>
-                    <li><a href="${Plist[0].link}">예약하러 가기</a></li>
+                	<li>여행사 : ${i.company}</li>
+                    <li>최소 출발 인원 : ${i.minpersonnel}</li>
+                    <li>예약가능 인원 : ${i.presentreservation}/${i.personnel}</li>
+                    <li>가격 : ${i.price}</li>
+                    <li><a href="${i.link}">예약하러 가기</a></li>
                 </ul>
             </div>
 
         </div>
- 
+ 	</c:forEach>
         <!-- Related Projects Row -->
         <div class="row">
 

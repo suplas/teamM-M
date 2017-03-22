@@ -21,10 +21,14 @@ import com.exception.CommonException;
 public class PackageThirdListController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String packagename = request.getParameter("packagename");
+		System.out.println(packagename);
+		
+	
 		String target="";
 		PackageBiz biz=new PackageBiz();
 		try {
-			List<PackageThirdDTO> list=biz.packageAllList();
+			List<PackageThirdDTO> list=biz.packageAllList(packagename);
 			request.setAttribute("Plist", list);
 			target="PackageThird.jsp";
 			

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.biz.PackageBiz;
-import com.entity.PackageFirstDTO;
+import com.entity.PackageThirdDTO;
 import com.exception.CommonException;
 
 
@@ -20,13 +20,13 @@ public class PackageFirstController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = request.getParameter("name");
+		String city = request.getParameter("city");
 	
 		
 		String target ="";
 		PackageBiz service = new PackageBiz();
 		try {
-			List<PackageFirstDTO> list = service.packageList(name);
+			List<PackageThirdDTO> list = service.packageList(city);
 			request.setAttribute("Plist", list);
 			target="PackageFirst.jsp";
 			

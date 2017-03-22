@@ -15,19 +15,21 @@ public class PackageThirdDTO {
 	private int minpersonnel;
 	private int presentreservation;
 	private int personnel;
-	private String stay;
+	private String loc;
 	private String link;
 	private String image1;
 	private String image2;
 	private String image3;
+	private String city;
+	private String doorimg;
 	public PackageThirdDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public PackageThirdDTO(int packageno, String company, String startdate, String lastdate, String airline,
 			String startairplaneid, String lastairplaneid, String term, String packagename, int price,
-			String reservationab, int minpersonnel, int presentreservation, int personnel, String stay, String link,
-			String image1, String image2, String image3) {
+			String reservationab, int minpersonnel, int presentreservation, int personnel, String loc, String link,
+			String image1, String image2, String image3, String city, String doorimg) {
 		super();
 		this.packageno = packageno;
 		this.company = company;
@@ -43,11 +45,13 @@ public class PackageThirdDTO {
 		this.minpersonnel = minpersonnel;
 		this.presentreservation = presentreservation;
 		this.personnel = personnel;
-		this.stay = stay;
+		this.loc = loc;
 		this.link = link;
 		this.image1 = image1;
 		this.image2 = image2;
 		this.image3 = image3;
+		this.city = city;
+		this.doorimg = doorimg;
 	}
 	public int getPackageno() {
 		return packageno;
@@ -133,11 +137,11 @@ public class PackageThirdDTO {
 	public void setPersonnel(int personnel) {
 		this.personnel = personnel;
 	}
-	public String getStay() {
-		return stay;
+	public String getLoc() {
+		return loc;
 	}
-	public void setStay(String stay) {
-		this.stay = stay;
+	public void setLoc(String loc) {
+		this.loc = loc;
 	}
 	public String getLink() {
 		return link;
@@ -163,14 +167,27 @@ public class PackageThirdDTO {
 	public void setImage3(String image3) {
 		this.image3 = image3;
 	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getDoorimg() {
+		return doorimg;
+	}
+	public void setDoorimg(String doorimg) {
+		this.doorimg = doorimg;
+	}
 	@Override
 	public String toString() {
 		return "PackageThirdDTO [packageno=" + packageno + ", company=" + company + ", startdate=" + startdate
 				+ ", lastdate=" + lastdate + ", airline=" + airline + ", startairplaneid=" + startairplaneid
 				+ ", lastairplaneid=" + lastairplaneid + ", term=" + term + ", packagename=" + packagename + ", price="
 				+ price + ", reservationab=" + reservationab + ", minpersonnel=" + minpersonnel
-				+ ", presentreservation=" + presentreservation + ", personnel=" + personnel + ", stay=" + stay
-				+ ", link=" + link + ", image1=" + image1 + ", image2=" + image2 + ", image3=" + image3 + "]";
+				+ ", presentreservation=" + presentreservation + ", personnel=" + personnel + ", loc=" + loc + ", link="
+				+ link + ", image1=" + image1 + ", image2=" + image2 + ", image3=" + image3 + ", city=" + city
+				+ ", doorimg=" + doorimg + "]";
 	}
 	
 }	
