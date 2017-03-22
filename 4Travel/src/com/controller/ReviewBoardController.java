@@ -21,7 +21,7 @@ import com.exception.CommonException;
 public class ReviewBoardController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				request.setCharacterEncoding("utf-8");
-				String target="=";  
+				String target="";  
 				//jsp 에서 넘어오는 curpage
 				String curpage=request.getParameter("curpage");
 				String perPage=request.getParameter("perPageCount");

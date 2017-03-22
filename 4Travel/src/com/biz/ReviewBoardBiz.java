@@ -13,6 +13,22 @@ import com.exception.CommonException;
 
 public class ReviewBoardBiz {
 	String namespace="com.fortravel.ReviewBoardMapper.";
+	
+	public void reviewBoardWrite(HashMap<String, String> map) throws CommonException{
+		SqlSession session = MySqlSessionFactory.openSession();
+		try{
+			session.insert(namespace+"reviewBoardWrite", map);
+			session.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new CommonException("글쓰기 실패");
+		}
+		finally {
+			session.close();
+		}
+		
+	}//end boardWrite
+	
 	public void boardReadcnt(int num){
 		SqlSession session=MySqlSessionFactory.openSession();
 		try{

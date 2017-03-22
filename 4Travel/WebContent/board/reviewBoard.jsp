@@ -94,6 +94,7 @@
 		<!-- Blog Post Row -->
 		<div class="row">
 			<div class="col-md-1 text-center">
+				<p>${dto.num}</p>
 				<p>${dto.travelNation}</p>
 				<p>${dto.travelLoc}</p>
 				<p>조회수 : ${dto.readcnt}</p>
@@ -102,13 +103,13 @@
 			<c:if test="${dto.image1 !=null}">
 				<div class="col-md-5">
 					<a href="#"> <img class="img-responsive img-hover"
-						src="reviewimages/${dto.image1}.jpg" alt="">
+						src="/4Travel/images/${dto.image1}" alt="">
 					</a>
 				</div>
 			</c:if>
 			<div class="col-md-6">
 				<h3>
-					<a href="ReviewBoardDetailController?num=${dto.num}">${dto.title}${dto.num}</a>
+					<a href="ReviewBoardDetailController?num=${dto.num}">${dto.title}</a>
 				</h3>
 				<p>
 					by <a href="#">${dto.userid}</a>

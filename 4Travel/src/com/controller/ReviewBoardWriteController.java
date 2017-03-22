@@ -13,11 +13,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import com.biz.ReviewBoardBiz;
+import com.entity.MemberDTO;
+import com.entity.ReviewBoardDTO;
+import com.exception.CommonException;
 
 @WebServlet("/ReviewBoardWriteController")
 public class ReviewBoardWriteController extends HttpServlet {
@@ -25,6 +31,7 @@ public class ReviewBoardWriteController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Create a factory for disk-based file items
+		String target="";
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		String content=request.getParameter("content");
 		// Configure a repository (to ensure a secure temp location is used)
@@ -48,7 +55,7 @@ public class ReviewBoardWriteController extends HttpServlet {
 		String fieldName = null;
 		String fieldValue = null;
 		long fileSize = 0;
-		String fileName = null;
+		String image1 = null;
 		while (ite.hasNext()) {
 			FileItem fileItem = ite.next();
 			System.out.println(fileItem);
@@ -58,11 +65,11 @@ public class ReviewBoardWriteController extends HttpServlet {
 				map.put(fieldName, fieldValue);
 				System.out.println("if 파일 네임:"+fieldName+"\t"+"if필드 밸류"+fieldValue);
 			} else { //type = "file" true
-				fileName = fileItem.getName();  
+				image1 = fileItem.getName();  
 				fileSize = fileItem.getSize();
-				map.put("fileName", fileName);
-				System.out.println("파일네임 : "+fileName);
-				File f = new File("C:\\temp\\upload",fileName);
+				map.put("image1", image1);
+				System.out.println("파일네임 : "+image1);
+				File f = new File("C:\\temp\\upload",image1);
 				try {
 					fileItem.write(f);
 				} catch (Exception e) {
@@ -71,13 +78,30 @@ public class ReviewBoardWriteController extends HttpServlet {
 				}
 			}
 		}// end while
+		
+		HttpSession session = request.getSession();
+		MemberDTO dto=(MemberDTO)session.getAttribute("login");
+		String userid=dto.getUserid();
+		map.put("userid", userid);
+		System.out.println("유저아이디입니다 : "+userid);
 		request.setAttribute("map", map);
 		request.setAttribute("fieldValue", fieldValue);
-		request.setAttribute("fileName", fileName);
+		request.setAttribute("image1", image1);
 		request.setAttribute("fileSize", fileSize);
 		request.setAttribute("content", content);
 		System.out.println(map);
-		RequestDispatcher dis = request.getRequestDispatcher("uploadInfo.jsp");
+		ReviewBoardBiz biz=new ReviewBoardBiz();
+		try {
+			biz.reviewBoardWrite(map);
+			target="ReviewBoardController";
+		} catch (CommonException e) {
+			// TODO Auto-generated catch block
+			target="error.jsp";
+			e.printStackTrace();
+		}
+		
+		
+		RequestDispatcher dis = request.getRequestDispatcher(target);
 		dis.forward(request, response);
 
 	}

@@ -79,6 +79,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from reviewboard
 		where num = #{num}
 	</select>
-	
-	
+	<insert id="reviewBoardWrite" parameterType="hashmap">
+	insert into  reviewboard ( num,title,content,userid,readcnt,travelNation,travelLoc,image1)
+    values ( reviewboard_seq.nextval, #{title},#{content},#{userid},0
+    ,#{travelNation},#{travelLoc},#{image1})
+	</insert>
 </mapper>

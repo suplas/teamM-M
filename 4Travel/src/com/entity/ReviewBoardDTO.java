@@ -2,14 +2,14 @@ package com.entity;
 
 public class ReviewBoardDTO {
 	private int num;
-	private String title;
-	private String content;
-	private String userid;
+	private String title; 
+	private String content; 
+	private String userid; 
 	private String writeday;
 	private int readcnt;
 	private String travelNation;
-	private String travelLoc;
-	private String image1;
+	private String travelLoc; 
+	private String image1; 
 	private String image2;
 	private String image3;
 	public ReviewBoardDTO() {

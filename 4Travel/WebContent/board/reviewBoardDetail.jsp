@@ -1,106 +1,107 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <div class="container">
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<style>
+.arrowdiv{
+width:10px;
+height:10px;
+background-image: url('images/arrow.png');
+background-size: 10px;
+padding:0;
+}
+</style>
+<div class="container">
 
-        <!-- Page Heading/Breadcrumbs -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">여행 후기
-                    <small><a href="#">For Travel</a>
-                    </small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="Home">Home</a>
-                    </li>
-                    <li class="active">${boardRetrieve.title}</li>
-                </ol>
-            </div>
-        </div>
-        <!-- /.row -->
+	<!-- Page Heading/Breadcrumbs -->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">
+				여행 후기 <small><a href="#">For Travel</a> </small>
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="ReviewBoardController">목록가기</a></li>
+				<li class="active">${boardRetrieve.title}</li>
+			</ol>
+		</div>
+	</div>
+	<!-- /.row -->
 
-        <!-- Content Row -->
-        <div class="row">
+	<!-- Content Row -->
+	<div class="row">
 
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
+		<!-- Blog Post Content Column -->
+		<div class="col-lg-8">
 
-                <!-- Blog Post -->
+			<!-- Blog Post -->
 
-                <hr>
+			<hr>
 
-                <!-- Date/Time -->
-                <p><i class="fa fa-clock-o"></i>  Posted on ${boardRetrieve.writeday}</p>
+			<!-- Date/Time -->
+			<p>
+				<i class="fa fa-clock-o"></i> Posted on ${boardRetrieve.writeday}
+			</p>
 
-                <hr>
+			<hr>
 
-                <!-- Preview Image -->
-                <img class="img-responsive" src="reviewimages/${boardRetrieve.image1}.jpg" alt="">
+			<!-- Preview Image -->
+			<img class="img-responsive"
+				src="/4Travel/images/${boardRetrieve.image1}" alt="">
 
-                <hr>
+			<hr>
 
-                <!-- Post Content -->
-                <p class="lead">${boardRetrieve.title}</p>
-                <p>${boardRetrieve.content}</p>
+			<!-- Post Content -->
+			<p class="lead">${boardRetrieve.title}</p>
+			<p>
+			<pre>${boardRetrieve.content}</pre>
+			</p>
 
-                <hr>
+			<hr>
 
-                <!-- Blog Comments -->
+			<!-- Blog Comments -->
 
-                <!-- Comments Form -->
-                <div class="well">
-                    <h4>Leave a Comment:</h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+			<!-- Comments Form -->
+			<div class="well">
+				<h4>Leave a Comment:</h4>
+				<form action="ReviewReplyWriteController"role="form">
+					<div class="form-group">
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+					<input type="hidden" name="num" value="${boardRetrieve.num}">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<hr>
 
-                <hr>
+	<!-- Posted Comments -->
 
-                <!-- Posted Comments -->
+	<!-- Comment -->
+	<c:forEach var="list" items="${rpList}">
+	<div class="arrowdiv"></div>
+			<a class="pull-left" href="#"> 
+			<c:forEach begin="0" end="${list.repIndent}">
+					<div class="arrowdiv"></div>
+					<!-- <img class="media-object" src="/4Travel/images/" alt=""> -->
+				</c:forEach>
+			</a>
+		<div class="media">
+			<div class="media-body">
+			
+				<h4 class="media-heading">
+					By ${list.userid} <small>${list.writeday}</small>
+				</h4>
+				${list.content}
+			</div>
+			<button type="submit" class="btn btn-primary">댓글 달기</button>
+		</div>
+		<hr>
+	</c:forEach>
+	<!-- Comment -->
 
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                      <!--   <img class="media-object" src="http://placehold.it/64x64" alt=""> -->
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
-
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                       <!--  <img class="media-object" src="http://placehold.it/64x64" alt=""> -->
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        <!-- Nested Comment -->
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <!-- <img class="media-object" src="http://placehold.it/64x64" alt=""> -->
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nested Start Bootstrap
-                                    <small>August 25, 2014 at 9:30 PM</small>
-                                </h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-                        <!-- End Nested Comment -->
-                    </div>
-                </div>
-
-            </div>
+</div>
 <!-- 
             Blog Sidebar Widgets Column
             <div class="col-md-4">
@@ -160,24 +161,27 @@
         </div>
         /.row
  -->
-        <hr>
+<hr>
 
-        <!-- Footer -->
-         <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <font color="gray"><p>ForTravel 대표이사: team M&M 서울 강남구 역삼동  에이콘아카데미(주)에이콘이즈</p>
-						<p>대표전화: 02-000-0000 팩스:02-000-0000</p>
-                   		 <p>Copyright &copy; team M&amp;M(Jung MinWoo,Lee Min Sub) All Rights Reserved.</p></font>
-                </div>
-            </div>
-        </footer>
+<!-- Footer -->
+<footer>
 
-    </div>
-    <!-- /.container -->
+	<div class="row">
+		<div class="col-lg-12">
+			<font color="gray"><p>ForTravel 대표이사: team M&M 서울 강남구 역삼동
+					에이콘아카데미(주)에이콘이즈</p>
+				<p>대표전화: 02-000-0000 팩스:02-000-0000</p>
+				<p>Copyright &copy; team M&amp;M(Jung MinWoo,Lee Min Sub) All
+					Rights Reserved.</p></font>
+		</div>
+	</div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+</div>
+<!-- /.container -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
