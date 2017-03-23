@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
  <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -13,7 +13,7 @@
             <div class="item active">
                 <div class="fill" style="background-image:url('images/cherryblossoms.2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 1</h2>
+                    <h2>마루야마 공원 / 철학의 길 – 교토</h2>
                 </div>
             </div>
             <div class="item">
