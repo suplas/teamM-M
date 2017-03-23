@@ -71,7 +71,7 @@
         <c:forEach var="i" items="${Plist}">
         <div class="packagediv">
             <div class ="packagelayout">
-                <a href="PackageThirdListController">
+                <a href="PackageThirdListController}">
                     <img class="packageimg" src="images/${i.image}.jpg" alt="package01">
                 </a>
                 <h3 class = "title">

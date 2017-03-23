@@ -24,11 +24,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		select packagename,COMPANY,doorimg,AIRLINE,price,STARTDATE,LASTDATE
  		from packagedb
  		order by packageno
- 		
  	</select>
- 		<update id="boardReadcnt" parameterType="int">
-		update reviewboard
-		set readcnt =readcnt +1
-		where num = #{num}
-	</update>
+ 	<!-- <update id="recentlyPackage" parameterType="MemberDTO">
+		update member
+		set packageno = #{packageno}
+		where userid = #{userid}
+	</update> -->
+ 	
 </mapper>

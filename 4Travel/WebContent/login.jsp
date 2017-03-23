@@ -5,6 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,6 +21,7 @@
 <body>
 <jsp:include page="maininclude/navi.jsp" flush="true" />
 <jsp:include page="maininclude/login.jsp" flush="true" />
+
  
 </body>
 </html>

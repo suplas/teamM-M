@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.biz.PackageBiz;
+import com.entity.MemberDTO;
 import com.entity.PackageThirdDTO;
 import com.exception.CommonException;
 
@@ -23,8 +25,11 @@ public class PackageThirdListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String packagename = request.getParameter("packagename");
 		
+
+		
 		String target="";
 		PackageBiz biz=new PackageBiz();
+		
 		try {
 			List<PackageThirdDTO> list=biz.packageAllList(packagename);
 			request.setAttribute("Plist", list);

@@ -14,12 +14,13 @@ public class MemberDTO {
 	private String email1;
 	private String email2;
 	private String birth;
+	private int packageno;
 	public MemberDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public MemberDTO(String userid, String passwd, String username, int post1, int post2, String addr1, String addr2,
-			int phone1, int phone2, int phone3, String email1, String email2, String birth) {
+			int phone1, int phone2, int phone3, String email1, String email2, String birth, int packageno) {
 		super();
 		this.userid = userid;
 		this.passwd = passwd;
@@ -34,6 +35,7 @@ public class MemberDTO {
 		this.email1 = email1;
 		this.email2 = email2;
 		this.birth = birth;
+		this.packageno = packageno;
 	}
 	public String getUserid() {
 		return userid;
@@ -113,13 +115,19 @@ public class MemberDTO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
+	public int getpackageno() {
+		return packageno;
+	}
+	public void setpackageno(int packageno) {
+		this.packageno = packageno;
+	}
 	@Override
 	public String toString() {
 		return "MemberDTO [userid=" + userid + ", passwd=" + passwd + ", username=" + username + ", post1=" + post1
 				+ ", post2=" + post2 + ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone1=" + phone1 + ", phone2="
 				+ phone2 + ", phone3=" + phone3 + ", email1=" + email1 + ", email2=" + email2 + ", birth=" + birth
-				+ "]";
+				+ ", packageno=" + packageno + "]";
 	}
-
+	
 
 }

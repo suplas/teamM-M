@@ -34,7 +34,7 @@ public class MemberJoinController extends HttpServlet{
 		String email2=request.getParameter("email2");
 		String birth=request.getParameter("birth");
 		
-		MemberDTO mDTO=new MemberDTO(userid, passwd, username, post1, post2, addr1, addr2, phone1, phone2, phone3, email1, email2, birth);
+		MemberDTO mDTO=new MemberDTO(userid, passwd, username, post1, post2, addr1, addr2, phone1, phone2, phone3, email1, email2, birth, 0);
 		
 		MemberBiz biz=new MemberBiz();
 		

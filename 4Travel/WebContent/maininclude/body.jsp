@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
  <div class="container">
  <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -24,16 +27,24 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i>많이 본 패키지</h4>
+                        <h4><i class="fa fa-fw fa-check"></i>추천 패키지</h4>
                     </div>
                     <div class="panel-body">
-                    <a href="PackageThirdListController?packagename=${Plist[0].packagename}">
+    
+			<c:if test="${session.login ==''}">
+					최근 본 패키지가 없습니다.
+					${session.login }
+			</c:if>	
+				<c:if test="${session.login !=''}">
+				
+				<a href="PackageThirdListController?packagename=${Plist[0].packagename}&packageno=${Plist[0].packageno}">
                         <p><img  class="newpackage" src="images/${Plist[0].doorimg}.jpg"></img></a><br><br>
                         	패키지 명 : ${Plist[0].packagename}<br>
                         	출발날짜 : ${Plist[0].startdate}<br>
                         	도착날짜 : ${Plist[0].lastdate}<br>
                         	<span>가격 : </span><span class="testEle">${Plist[0].price}</span></p>
-                        <a href="PackageThirdListController?packagename=${Plist[0].packagename}" class="btn btn-default">보러가기</a>
+                        <a href="PackageThirdListController?packagename=${Plist[0].packagename}&packageno=${Plist[0].packageno}" class="btn btn-default">보러가기</a>
+				</c:if>
                     </div>
                 </div>
             </div>
@@ -54,7 +65,7 @@
                         <h4><i class="fa fa-fw fa-compass"></i>여행후기</h4>
                     </div>
                     <div class="panel-body">
-                         <p><img  class="newpackage" src="/4Travel/images/${Plist2[0].image1}.jpg"></img></a><br><br>
+                         <p><img  class="newpackage" src="/4Travel/images/${Plist2[0].image1}"></img></a><br><br>
                         	<span>타이틀 : </span><span class="testEle">${Plist2[0].title}</span></p>
                         	작성자 : ${Plist2[0].userid}<br>
                         	여행지 : ${Plist2[0].travelNation}/${Plist2[0].travelLoc}<br>
@@ -67,43 +78,7 @@
         <!-- /.row -->
 
         <!-- Portfolio Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">추천 패키지 상품</h2>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
-
+        
         <!-- Features Section -->
         <div class="row">
             <div class="col-lg-12">

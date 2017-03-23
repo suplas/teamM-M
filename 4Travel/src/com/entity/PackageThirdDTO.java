@@ -22,6 +22,7 @@ public class PackageThirdDTO {
 	private String image3;
 	private String city;
 	private String doorimg;
+	
 	public PackageThirdDTO() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -52,6 +53,7 @@ public class PackageThirdDTO {
 		this.image3 = image3;
 		this.city = city;
 		this.doorimg = doorimg;
+		
 	}
 	public int getPackageno() {
 		return packageno;
@@ -179,6 +181,7 @@ public class PackageThirdDTO {
 	public void setDoorimg(String doorimg) {
 		this.doorimg = doorimg;
 	}
+
 	@Override
 	public String toString() {
 		return "PackageThirdDTO [packageno=" + packageno + ", company=" + company + ", startdate=" + startdate

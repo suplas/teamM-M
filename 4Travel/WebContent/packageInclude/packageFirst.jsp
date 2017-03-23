@@ -1,10 +1,11 @@
+<%@page import="com.entity.PackageThirdDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%session.getAttribute("login"); %>
  <div class="container">
-
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
@@ -24,18 +25,20 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
+     
  	<c:forEach var="i" items="${Plist}">
         <div class="row">
             <div class="col-md-4 img-portfolio">
-                <a href="PackageThirdListController?packagename=${i.packagename}">
+                <a href="PackageThirdListController?packagename=${i.packagename}&packageno=${i.packageno}&userid=${login.userid}">
                     <img class="img-responsive img-hover" src="images/${i.doorimg}.jpg" alt="packageimage01">
                 </a>
                 <h3>
-                    <a href="PackageThirdListController?packagename=${i.packagename}">${i.packagename}</a>
+                    <a href="PackageThirdListController?packagename=${i.packagename}&packageno=${i.packageno}&userid=${login.userid}">${i.packagename}</a>
                 </h3>
                			<p>여행 지역 : ${i.loc}</p>
                			<p>여행 기간 : ${i.term}</p>
                 		<p>가격 : ${i.price}</p>
+                		
                 		
                 
             </div>
