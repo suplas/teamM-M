@@ -14,7 +14,7 @@
                 <div class="fill" style="background-image:url('images/cherryblossoms.2.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>마루야마 공원 / 철학의 길 – 교토</h2>
-                </div>
+                </div> 
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('images/cherryblossoms.jpg');"></div>
