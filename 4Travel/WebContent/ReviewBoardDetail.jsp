@@ -16,5 +16,7 @@
 <body>
 <jsp:include  page="maininclude/navi.jsp" flush="true"/>
 <jsp:include page="board/reviewBoardDetail.jsp" flush="true"/>
+<jsp:include page="board/reviewReplyUI.jsp" flush="true"/>
+<jsp:include page="maininclude/forcopy.jsp" flush="true" />
 </body>
 </html>

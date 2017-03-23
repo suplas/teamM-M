@@ -64,9 +64,9 @@ padding:0;
 			<!-- Comments Form -->
 			<div class="well">
 				<h4>Leave a Comment:</h4>
-				<form action="ReviewReplyWriteController"role="form">
+				<form action="ReviewReplyWriteController"role="form" method="post">
 					<div class="form-group">
-						<textarea class="form-control" rows="3"></textarea>
+						<textarea name="rpContent"class="form-control" rows="3"></textarea>
 					</div>
 					<input type="hidden" name="num" value="${boardRetrieve.num}">
 					<button type="submit" class="btn btn-primary">Submit</button>
@@ -76,108 +76,11 @@ padding:0;
 	</div>
 	<hr>
 
-	<!-- Posted Comments -->
 
-	<!-- Comment -->
-	<c:forEach var="list" items="${rpList}">
-	<div class="arrowdiv"></div>
-			<a class="pull-left" href="#"> 
-			<c:forEach begin="0" end="${list.repIndent}">
-					<div class="arrowdiv"></div>
-					<!-- <img class="media-object" src="/4Travel/images/" alt=""> -->
-				</c:forEach>
-			</a>
-		<div class="media">
-			<div class="media-body">
-			
-				<h4 class="media-heading">
-					By ${list.userid} <small>${list.writeday}</small>
-				</h4>
-				${list.content}
-			</div>
-			<button type="submit" class="btn btn-primary">댓글 달기</button>
-		</div>
-		<hr>
-	</c:forEach>
-	<!-- Comment -->
-
+	
 </div>
-<!-- 
-            Blog Sidebar Widgets Column
-            <div class="col-md-4">
 
-                Blog Search Well
-                <div class="well">
-                    <h4>Blog Search</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                        </span>
-                    </div>
-                    /.input-group
-                </div>
 
-                Blog Categories Well
-                <div class="well">
-                    <h4>Blog Categories</h4>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    /.row
-                </div>
-
-                Side Widget Well
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                </div>
-
-            </div>
-
-        </div>
-        /.row
- -->
-<hr>
-
-<!-- Footer -->
-<footer>
-
-	<div class="row">
-		<div class="col-lg-12">
-			<font color="gray"><p>ForTravel 대표이사: team M&M 서울 강남구 역삼동
-					에이콘아카데미(주)에이콘이즈</p>
-				<p>대표전화: 02-000-0000 팩스:02-000-0000</p>
-				<p>Copyright &copy; team M&amp;M(Jung MinWoo,Lee Min Sub) All
-					Rights Reserved.</p></font>
-		</div>
-	</div>
-</footer>
-
-</div>
 <!-- /.container -->
 
 <!-- jQuery -->
