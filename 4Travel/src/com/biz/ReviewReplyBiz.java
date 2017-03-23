@@ -11,6 +11,16 @@ import com.exception.CommonException;
 
 public class ReviewReplyBiz {
 	String namespace="com.fortravel.ReviewReplyMapper.";
+	public void replyWrite(ReviewReplyDTO dto){
+		SqlSession session = MySqlSessionFactory.openSession();
+		try{
+	 session.insert(namespace+"replyWrite", dto);
+	 session.commit();
+		}finally {
+			session.close();
+		}
+		
+	}//end boardWrite
 	
 	public void replyUpdate(ReviewReplyDTO dto){
 		SqlSession session = MySqlSessionFactory.openSession();
@@ -36,11 +46,11 @@ public class ReviewReplyBiz {
 	
 	
 	
-	public List<ReviewReplyDTO> replyList(int repRoot){
+	public List<ReviewReplyDTO> replyList(int reviewNum){
 		 SqlSession session = MySqlSessionFactory.openSession();
 		 List<ReviewReplyDTO> list = null;
 		   try{
-			   	list = session.selectList(namespace+"replyList", repRoot);
+			   	list = session.selectList(namespace+"replyList", reviewNum);
 			}finally {
 				session.close();
 			}

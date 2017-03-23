@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.biz.ReviewReplyBiz;
 import com.entity.MemberDTO;
+import com.entity.ReviewReplyDTO;
 
 /**
  * Servlet implementation class HomeController
@@ -19,23 +21,26 @@ import com.entity.MemberDTO;
 public class ReviewReplyWriteController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String target=""; 
+		String content=request.getParameter("rpContent");
 		
 		HttpSession session = request.getSession();
-		MemberDTO dto = (MemberDTO)session.getAttribute("login");
-		
-		if(dto != null){
+		MemberDTO mdto = (MemberDTO)session.getAttribute("login");
+		ReviewReplyDTO rpDTO=new ReviewReplyDTO();
+		if(mdto != null){
 			int num=Integer.parseInt(request.getParameter("num"));
-			//여기서부터 
+			ReviewReplyBiz biz=new ReviewReplyBiz();
+			rpDTO.setContent(content);
+			rpDTO.setReviewNum(num);
+			rpDTO.setUserid(mdto.getUserid());
+			biz.replyWrite(rpDTO);
 			target="ReviewBoardDetailController?num="+num;
 		}else{
 			target="LoginUIController";
 			request.setAttribute("loginFail", "로그인 후 시도하세요");
 		}
-		RequestDispatcher dis = 
-        		request.getRequestDispatcher(target);
-        dis.forward(request, response);
-		
+		response.sendRedirect(target);
 		
 	        
 	}
