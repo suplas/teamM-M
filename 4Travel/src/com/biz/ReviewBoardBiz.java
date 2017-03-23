@@ -3,6 +3,8 @@ package com.biz;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
@@ -13,6 +15,20 @@ import com.exception.CommonException;
 
 public class ReviewBoardBiz {
 	String namespace="com.fortravel.ReviewBoardMapper.";
+	
+	public List<ReviewBoardDTO> bestredcnt() throws CommonException{
+		SqlSession session=MySqlSessionFactory.openSession();
+		List<ReviewBoardDTO> list=null;
+		try{
+		list=session.selectList(namespace+"bestredcnt");
+		}catch(Exception e){
+			System.out.println("불러오기실패");
+			throw new CommonException("게시판 불러오기 실패");
+		}finally {
+			session.close();
+		}
+		return list;
+	}	
 	
 	public void reviewBoardWrite(HashMap<String, String> map) throws CommonException{
 		SqlSession session = MySqlSessionFactory.openSession();

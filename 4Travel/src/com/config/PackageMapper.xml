@@ -26,4 +26,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		order by packageno
  		
  	</select>
+ 		<update id="boardReadcnt" parameterType="int">
+		update reviewboard
+		set readcnt =readcnt +1
+		where num = #{num}
+	</update>
 </mapper>

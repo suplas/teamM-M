@@ -24,7 +24,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i><span class="testEle">특가 패키지</span></h4>
+                        <h4><i class="fa fa-fw fa-check"></i>많이 본 패키지</h4>
                     </div>
                     <div class="panel-body">
                     <a href="PackageThirdListController?packagename=${Plist[0].packagename}">
@@ -54,8 +54,12 @@
                         <h4><i class="fa fa-fw fa-compass"></i>여행후기</h4>
                     </div>
                     <div class="panel-body">
-                        <p>여행 후기 텍스트</p>
-                        <a href="#" class="btn btn-default">보러가기</a>
+                         <p><img  class="newpackage" src="/4Travel/images/${Plist2[0].image1}.jpg"></img></a><br><br>
+                        	<span>타이틀 : </span><span class="testEle">${Plist2[0].title}</span></p>
+                        	작성자 : ${Plist2[0].userid}<br>
+                        	여행지 : ${Plist2[0].travelNation}/${Plist2[0].travelLoc}<br>
+                        	<span>조회수 : </span><span class="testEle">${Plist2[0].readcnt}</span></p>
+                        <a href="PackageThirdListController?num=${Plist2[0].num}" class="btn btn-default">보러가기</a>
                     </div>
                 </div>
             </div>
