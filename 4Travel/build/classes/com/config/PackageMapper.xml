@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	where loc = #{loc}
     </select>
     <select id="packageNewlist" resultType="PackageThirdDTO">
- 		select packagename,COMPANY,doorimg,AIRLINE,price,STARTDATE,LASTDATE
+ 		select packagename,COMPANY,doorimg,AIRLINE,price,STARTDATE,LASTDATE,loc,term
  		from packagedb
  		order by packageno
  	</select>
