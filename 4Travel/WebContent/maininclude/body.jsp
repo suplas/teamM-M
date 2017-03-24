@@ -66,12 +66,12 @@
                     </div>
                     <div class="panel-body">
                     	
-                         <p><a href=""><img  class="newpackage" src="/4Travel/images/${Plist2[0].image1}"></img></a><br><br>
+                         <p><a href="ReviewBoardDetailController?num=${Plist2[0].num}"><img  class="newpackage" src="/4Travel/images/${Plist2[0].image1}"></img></a><br><br>
                         	<span>타이틀 : </span><span class="testEle">${Plist2[0].title}</span></p>
                         	작성자 : ${Plist2[0].userid}<br>
                         	여행지 : ${Plist2[0].travelNation}/${Plist2[0].travelLoc}<br>
                         	<span>조회수 : </span><span class="testEle">${Plist2[0].readcnt}</span></p>
-                        <a href="PackageThirdListController?num=${Plist2[0].num}" class="btn btn-default">보러가기</a>
+                        <a href="ReviewBoardDetailController?num=${Plist2[0].num}" class="btn btn-default">보러가기</a>
                     </div>
                 </div>
             </div>

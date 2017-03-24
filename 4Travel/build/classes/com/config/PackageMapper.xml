@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      <select id="countryAllList" parameterType="string" resultType="PackageFirstDTO">
     	select packageno,packagename,price,image,term,loc from packagemain
     	where loc = #{loc}
+    	order by price asc
     </select>
     <select id="packageNewlist" resultType="PackageThirdDTO">
  		select packagename,COMPANY,doorimg,AIRLINE,price,STARTDATE,LASTDATE,loc,term

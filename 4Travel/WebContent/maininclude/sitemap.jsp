@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#package").hover(function(event) {
+			$("ul").toggle();
+		
+		});
+	});
+			</script>
   <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
@@ -23,22 +33,23 @@
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="index.html" class="list-group-item">Home</a>
-                    <a href="about.html" class="list-group-item">About</a>
-                    <a href="services.html" class="list-group-item">Services</a>
-                    <a href="contact.html" class="list-group-item">Contact</a>
-                    <a href="portfolio-1-col.html" class="list-group-item">1 Column Portfolio</a>
-                    <a href="portfolio-2-col.html" class="list-group-item">2 Column Portfolio</a>
-                    <a href="portfolio-3-col.html" class="list-group-item">3 Column Portfolio</a>
-                    <a href="portfolio-4-col.html" class="list-group-item">4 Column Portfolio</a>
-                    <a href="portfolio-item.html" class="list-group-item">Single Portfolio Item</a>
-                    <a href="blog-home-1.html" class="list-group-item">Blog Home 1</a>
-                    <a href="blog-home-2.html" class="list-group-item">Blog Home 2</a>
-                    <a href="blog-post.html" class="list-group-item">Blog Post</a>
-                    <a href="full-width.html" class="list-group-item">Full Width Page</a>
-                    <a href="sidebar.html" class="list-group-item active">Sidebar Page</a>
-                    <a href="faq.html" class="list-group-item">FAQ</a>
-                    <a href="404.html" class="list-group-item">404</a>
-                    <a href="pricing.html" class="list-group-item">Pricing Table</a>
+                    <a href="about.html" class="list-group-item" id = "package">패키지</a>
+                    <ul style="display: none;">
+                    <li class="list-group-item">동남아/대만</li>
+                    <li class="list-group-item">중국/홍콩</li>
+                    <li class="list-group-item">일본</li>
+                    <li class="list-group-item">유럽</li>
+                    <li class="list-group-item">괌/사이판</li>
+                    <li class="list-group-item">남태평양</li>
+                    <li class="list-group-item">미국/캐나다</li>
+                    <li class="list-group-item">서남아/중앙아시아</li>
+                    <li class="list-group-item">중동/아프리카</li>
+                    <li class="list-group-item">중남미</li>
+                    </ul>
+                    <a href="services.html" class="list-group-item">여행후기</a>
+                    <a href="contact.html" class="list-group-item">공지사항</a>
+                    <a href="portfolio-1-col.html" class="list-group-item">FAQ</a>
+                    <a href="blog-home-1.html" class="list-group-item">회원가입</a>
                 </div>
             </div>
             <!-- Content Column -->
