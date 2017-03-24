@@ -4,6 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- <meta property="og:url" content="http://192.168.0.41:8090/4Travel/ReviewBoardController">
+    <meta property="og:title" content="4Travel">
+    <meta property="og:description" content="4Travel입니다">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/background01.jpg"> -->
 <title>Insert title here</title>
    <link href="css/bootstrap.min.css" rel="stylesheet">
 

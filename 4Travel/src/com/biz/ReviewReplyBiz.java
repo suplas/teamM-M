@@ -22,26 +22,28 @@ public class ReviewReplyBiz {
 		
 	}//end boardWrite
 	
-	public void replyUpdate(ReviewReplyDTO dto){
+	public int replyUpdate(ReviewReplyDTO dto){
+		int n=0;
 		SqlSession session = MySqlSessionFactory.openSession();
 		try{
-	 session.insert(namespace+"replyUpdate", dto);
+	 n=session.insert(namespace+"replyUpdate", dto);
 	 session.commit();
 		}finally {
 			session.close();
 		}
-		
+		return n;
 	}
-	public void replyInsert(ReviewReplyDTO dto){
-		replyUpdate(dto);
+	public int replyInsert(ReviewReplyDTO dto){
+		int n=0;
+		int m=replyUpdate(dto);
 		SqlSession session = MySqlSessionFactory.openSession();
 		try{
-			session.insert(namespace+"replyInsert", dto);
+			n=session.insert(namespace+"replyInsert", dto);
 			session.commit();
 		}finally {
 			session.close();
 		}
-		
+	return n+m;
 	}
 	
 	

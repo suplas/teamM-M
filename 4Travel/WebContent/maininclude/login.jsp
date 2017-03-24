@@ -9,6 +9,13 @@
     alert(x);
   </script>
 </c:if>
+<c:if test="${sessionScope.loginFail != null }">
+
+  <%
+  HttpSession sess=request.getSession();
+  sess.removeAttribute("loginFail");
+  %>
+</c:if>
   <div class="container">
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">

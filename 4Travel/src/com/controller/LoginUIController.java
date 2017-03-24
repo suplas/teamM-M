@@ -16,7 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginUIController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 RequestDispatcher dis = 
+		 
+		RequestDispatcher dis = 
 	        		request.getRequestDispatcher("login.jsp");
 	        dis.forward(request, response);
 

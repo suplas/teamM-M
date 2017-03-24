@@ -92,8 +92,8 @@ public class ReviewBoardController extends HttpServlet {
 				session.setAttribute("pageDTO", pageDTO);
 				session.setAttribute("locList", locList);
 				//포워드
-				RequestDispatcher dis=request.getRequestDispatcher("ReviewBoard.jsp");
-				dis.forward(request, response);
+				
+				response.sendRedirect("ReviewBoard.jsp");
 		
 	
 	}

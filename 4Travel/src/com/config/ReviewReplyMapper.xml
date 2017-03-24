@@ -16,8 +16,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <update id="replyUpdate" parameterType="ReviewReplyDTO">
 <![CDATA[
    update reviewreply
-   set repStep = repStep+1
-   where repRoot = #{repRoot} and repStep > #{repStep}
+   set repStep = repStep+1 
+   where repRoot = #{repRoot} and reviewNum = #{reviewNum} and repStep > #{repStep}
    ]]>
    </update>
 
@@ -28,5 +28,6 @@ select num,userid, content
   ,repRoot,repStep,repIndent
      from reviewreply
      where reviewNum = #{reviewNum}
+     order by repRoot desc ,repStep asc
 </select>
 </mapper>

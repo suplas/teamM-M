@@ -10,10 +10,10 @@ height: 200px;
 margin: auto;
 }
 .arrowdiv{
-width:10px;
-height:10px;
+width:15px;
+height:15px;
 background-image: url('images/arrow.png');
-background-size: 10px;
+background-size: 15px;
 padding:0;
 }
 .showtoggle{
@@ -22,44 +22,48 @@ display:block;
 </style>
 <script type="text/javascript">
 $(document).ready(function(){
-		$(".replebutton").on("click",function(event){
-			if($(this).next().next().next(".reple").attr("style")=='display: block;'){
+		
+	$("body").on("click",".replebutton",function(event){
+		if(${login==null}){
+				alert('로그인 후 시도 해주세요');
+			}else if($(this).next().next().next(".reple").attr("style")=='display: block;'){
 			$(this).next().next().next(".reple").css("display","none");
 		}else{
 			$(this).next().next().next(".reple").css("display","block");
 		}
 			console.log($(this).next().next().next(".reple").attr("style"));
 			console.log($.trim($(this).next().next().next(".reple").attr("style"))=='display: block;');
-		});//end replebutton event
+		});//end rdeplebutton event
 		
-		$(".rprpform").on("submit",function(event){
-			//ajax 통신
+		$(".rprpformButton").on("click",function(event){
+			console.log($(this).closest(".rprpform"));
+			var queryString = $(this).closest(".rprpform").serialize() ;
+			console.log(queryString);
+		
 			$.ajax({
 				type:"get",
 				url:"board/reviewReplyUpdate.jsp",
-				datatype:"html",
-				data:{
-
-				
-				}
-				},
+				dataType:"html",
+				data:queryString,
 				success:function(responseData,status,xhr){
-					$("#result").text(responseData);
+					console.log(responseData);
+					$("#replyDiv").html(responseData);
 				},
 				error:function(error){
 					console.log(error);
 				}
-			}); //end ajax
+			}); //end ajax 
+		});	
 });	
 		</script>
-<div class="container">
+<div id="replyDiv" class="container">
 <!-- Comment -->
 	<c:forEach var="list" items="${rpList}">
 		<div class="media">
 			<c:forEach begin="0" end="${list.repIndent}">
 
 			<a class="pull-left" href="#">
-					<div class="media-object" >&nbsp;&nbsp;</div>
+					<div class="media-object" >&nbsp;&nbsp;&nbsp;&nbsp;</div>
 			</a>
 				</c:forEach>
 			<a class="pull-left" href="#">
@@ -70,12 +74,12 @@ $(document).ready(function(){
 				<h4 class="media-heading">
 					By ${list.userid} <small>${list.writeday}</small>
 				</h4>
-				<pre>${list.content}</pre>
-			<button class="replebutton btn btn-primary">댓글 달기</button>
+				<pre style="background: none; border: 0;">${list.content}</pre>
+			<button class="replebutton btn btn-primary" style="display: inline; size: ">댓글 달기</button>
 			<br/><br/>
 			<div class="reple well" style="display: none;">
 				<h4>Leave a Comment:</h4>
-				<form name="rprpform" action="#"role="form" method="post">
+				<form class="rprpform" name="rprpform" role="form" method="post">
 					<div class="form-group">
 						<textarea name="rprpContent"class="form-control" rows="3"></textarea>
 					</div>
@@ -85,12 +89,12 @@ $(document).ready(function(){
 					<input type="hidden" name="repStep" value="${list.repStep}">
 					<input type="hidden" name="repIndent" value="${list.repIndent}">
 					<input type="hidden" name="reviewNum" value="${boardRetrieve.num}">
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" class="rprpformButton btn btn-primary">Submit</button>
 				</form>
 			</div>
 			</div>
 		</div>
-		<hr>
 	</c:forEach>
 	<!-- Comment -->
+		<hr>
 </div>

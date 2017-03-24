@@ -38,7 +38,7 @@ public class ReviewReplyWriteController extends HttpServlet {
 			target="ReviewBoardDetailController?num="+num;
 		}else{
 			target="LoginUIController";
-			request.setAttribute("loginFail", "로그인 후 시도하세요");
+			session.setAttribute("loginFail", "로그인 후 시도하세요");
 		}
 		response.sendRedirect(target);
 		

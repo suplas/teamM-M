@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!-- jQuery -->
+
 <script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
@@ -94,7 +95,6 @@
 		<!-- Blog Post Row -->
 		<div class="row">
 			<div class="col-md-1 text-center">
-				<p>${dto.num}</p>
 				<p>${dto.travelNation}</p>
 				<p>${dto.travelLoc}</p>
 				<p>조회수 : ${dto.readcnt}</p>
@@ -103,7 +103,7 @@
 			<c:if test="${dto.image1 !=null}">
 				<div class="col-md-5">
 					<a href="#"> <img class="img-responsive img-hover"
-						src="/4Travel/images/${dto.image1}" alt="">
+						src="/4Travel/images/${dto.image1}" width="300px" height="180px"  alt="">
 					</a>
 				</div>
 			</c:if>
