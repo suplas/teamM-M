@@ -12,10 +12,15 @@
 		$(".newpackage").css("height","200px");
 		
 		$(".testEle").css("color","red");
-		});
+		$(".fontcolor").css("color","black");
+		/* $(".fontcolor").css("background-color","lightpink"); */
+	});
+		
+	
 	setInterval(function(){
 		$(".testEle").toggle();
 		}, 500);
+	
 			</script>
         <!-- Marketing Icons Section -->
          <div class="row">
@@ -106,13 +111,13 @@
                     <li>도착 날짜 : ${Plist[1].lastdate}</li>
                     <li>여행기간 : ${Plist[1].term}</li>
                     <li>항공사 : ${Plist[1].airline}</li>
-                    <li>가격 : ${Plist[1].price}</li>
+                    <li>가격 : ${Plist[1].price}</li> <a class="btn btn-lg btn-default btn-block" href="PackageThirdListController?loc=${Plist[1].loc}&packagename=${Plist[1].packagename}"><font class="fontcolor">관련 패키지 보러 가기</font></a>
                 </ul>
             </div>
             <div class="col-md-6">
                 <img class="img-responsive" src="images/cherryblossoms.jpg" alt="">
             </div>
-        </div>
+        </div>	
         <!-- /.row -->
 
         <hr>

@@ -23,7 +23,7 @@ public class QABoardListController extends HttpServlet {
 		try {
 			List<QABoardDTO> list=biz.QABoardSelect();
 			request.setAttribute("QAlist", list);
-			target="QABoard.jsp";
+			target="FAQBoard.jsp";
 		} catch (CommonException e) {
 			target="error.jsp";
 			e.printStackTrace();

@@ -20,5 +20,9 @@
 <body>
 <jsp:include page="maininclude/navi.jsp" flush="true"/>
 <jsp:include page="board/faqBoard.jsp" flush="true"/>
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

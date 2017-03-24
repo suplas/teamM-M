@@ -50,7 +50,7 @@
 		
 		
 		</script>
-	<%PackageThirdDTO dto = new PackageThirdDTO(); %>
+
         <!-- Page Heading/Breadcrumbs -->
         
         <div class="row">

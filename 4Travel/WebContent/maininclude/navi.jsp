@@ -207,7 +207,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">공지사항 </a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ</a>
+                        <a href="QABoardListController" class="dropdown-toggle" data-toggle="dropdown">FAQ</a>
                     </li>
                     <c:if test="${login == null }">
                      <li class="dropdown">
