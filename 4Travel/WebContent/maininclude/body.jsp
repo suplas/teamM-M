@@ -12,10 +12,15 @@
 		$(".newpackage").css("height","200px");
 		
 		$(".testEle").css("color","red");
-		});
+		$(".fontcolor").css("color","black");
+		/* $(".fontcolor").css("background-color","lightpink"); */
+	});
+		
+	
 	setInterval(function(){
 		$(".testEle").toggle();
 		}, 500);
+	
 			</script>
         <!-- Marketing Icons Section -->
          <div class="row">
@@ -66,12 +71,12 @@
                     </div>
                     <div class="panel-body">
                     	
-                         <p><a href=""><img  class="newpackage" src="/4Travel/images/${Plist2[0].image1}"></img></a><br><br>
+                         <p><a href="ReviewBoardDetailController?num=${Plist2[0].num}"><img  class="newpackage" src="/4Travel/images/${Plist2[0].image1}"></img></a><br><br>
                         	<span>타이틀 : </span><span class="testEle">${Plist2[0].title}</span></p>
                         	작성자 : ${Plist2[0].userid}<br>
                         	여행지 : ${Plist2[0].travelNation}/${Plist2[0].travelLoc}<br>
                         	<span>조회수 : </span><span class="testEle">${Plist2[0].readcnt}</span></p>
-                        <a href="PackageThirdListController?num=${Plist2[0].num}" class="btn btn-default">보러가기</a>
+                        <a href="ReviewBoardDetailController?num=${Plist2[0].num}" class="btn btn-default">보러가기</a>
                     </div>
                 </div>
             </div>
@@ -106,13 +111,13 @@
                     <li>도착 날짜 : ${Plist[1].lastdate}</li>
                     <li>여행기간 : ${Plist[1].term}</li>
                     <li>항공사 : ${Plist[1].airline}</li>
-                    <li>가격 : ${Plist[1].price}</li>
+                    <li>가격 : ${Plist[1].price}</li> <a class="btn btn-lg btn-default btn-block" href="PackageThirdListController?loc=${Plist[1].loc}&packagename=${Plist[1].packagename}"><font class="fontcolor">관련 패키지 보러 가기</font></a>
                 </ul>
             </div>
             <div class="col-md-6">
                 <img class="img-responsive" src="images/cherryblossoms.jpg" alt="">
             </div>
-        </div>
+        </div>	
         <!-- /.row -->
 
         <hr>

@@ -7,26 +7,34 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#japan").on("mouseover", function(event) {
-			$("#subul").toggle();
+		$("#japans").on("mouseover",function(event) {
+			$("#twodiv").toggle().css("display","table");
 		});
+		$("#japans").on("mouseout",function(event) {
+			$("#twodiv").toggle().css("display","none");
+		});
+		$("#twodiv").on("mouseout",function(event) {
+			$("#twodiv").toggle();
+		});
+		
 		$(".twoli").css("font-size", "12px");
 		$(".twoli").css("color", "black");
 		$("#twodiv").css("float", "right");
 		$("#twodiv").css("position","absolute");
 		$("#twodiv").css("left", "160px");
-		$("#twodiv").css("top", "50px");
+		$("#twodiv").css("top", "0px");
 		$("#twodiv").css("width", "450px");
 		$("#twodiv").css("background-color", "white");
 		$(".subul").css("list-style-type","none");
-		$("#subul").css("text-align","left");
-		$("#subul").css("border","1px solid black");
+		$("#subul").css("text-align","lef	t");
 		$(".subul").css("text-align","left");
 		$(".subul").css("padding-left","10px");
 		$("#subul").css("left","50px");
 		$("#subul").css("position","relative");
 		$("#firstTr").css("height","300px");
 		$("#subul").css("left","50px");
+		$("#subul").css("width","600px");
+		$("#subul").css("height","600px	");
 
 	});
 </script>
@@ -53,11 +61,11 @@
 					<ul class="dropdown-menu">
 						<li><a href="PackageFirstALLController?loc=대만">동남아/대만</a></li>
 						<li><a href="PackageFirstALLController?loc=중국">중국/홍콩</a></li>
-						<li><a href="PackageFirstALLController?loc=일본" id="japan">일본</a> 
-						  <div id="twodiv" >
-							<table id="subul" border="1"  style="display: none;">
+						<li><a href="PackageFirstALLController?loc=일본" id="japans">일본</a> 
+						  <div id="twodiv" style="display: none;">
+							<table id="subul">
 							<tr id="firstTr">
-							<td><b>간토(관동)</b><br>
+							<td calspan="1"><b>간토(관동)</b><br>
 							<ul class="subul">
 									<li><a class="twoli" href="PackageFirstController?city=도쿄">도쿄</a></li>
 									<li><a class="twoli" href="PackageFirstController?city=요코하마">요코하마</a></li>
@@ -127,7 +135,7 @@
 							</tr>
 							<tr>
 							<br>
-							<td><b>호쿠리쿠/중부</b><br>
+							<td><b>호쿠리쿠</b><br>
 							<ul class="subul">
 									<li><a class="twoli" href="PackageFirstController?city=니가타">니가타</a></li>
 									<li><a class="twoli" href="PackageFirstController?city=나고야">나고야</a></li>
@@ -199,7 +207,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">공지사항 </a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQ</a>
+                        <a href="QABoardListController" class="dropdown-toggle" data-toggle="dropdown">FAQ</a>
                     </li>
                     <c:if test="${login == null }">
                      <li class="dropdown">

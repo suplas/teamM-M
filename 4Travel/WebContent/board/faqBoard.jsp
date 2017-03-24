@@ -24,12 +24,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">회원가입은 어떻게 하나요?</a>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                               	회원 가입은 	main 화면 > 상단 회원가입 클릭 > 정보 입력 후 전송 누르시면 회원 가입이 되십니다.
                             </div>
                         </div>
                     </div>

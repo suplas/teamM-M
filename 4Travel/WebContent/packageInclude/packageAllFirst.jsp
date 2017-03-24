@@ -1,3 +1,4 @@
+<%@page import="com.entity.PackageThirdDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -45,22 +46,28 @@
 		setInterval(function(){
 		$(".testEle").toggle();
 		}, 500);
+		
+		
+		
 		</script>
 
         <!-- Page Heading/Breadcrumbs -->
         
         <div class="row">
             <div class="col-lg-12">
+  
                 <h1 class="page-header">패키지
-                    <small>${i.loc}</small>
+                
+                    <small>${PL.loc}</small>
                 </h1>
+                  
                 <ol class="breadcrumb">
                     <li><a href="Home">Home</a>
                     </li>
-                    <li class="active">패키지</li>
-           
+                    <li class="active">${Plist[0].loc}</li>
+				        
                 </ol>
-             
+ 
             </div>
 
         </div>
@@ -68,22 +75,27 @@
 
         <!-- Projects Row -->
         
-        <c:forEach var="i" items="${Plist}">
+      <c:forEach var="i" items="${Plist}">
+      
         <div class="packagediv">
             <div class ="packagelayout">
-                <a href="PackageThirdListController}">
+          
+       			<a href="PackageThirdListController?loc=${i.loc}&packagename=${i.packagename}">
                     <img class="packageimg" src="images/${i.image}.jpg" alt="package01">
                 </a>
                 <h3 class = "title">
-                    <a href="PackageThirdListController">${i.packagename}</a>
+                    <a href="PackageThirdListController?loc=${i.loc}&packagename=${i.packagename}">${i.packagename}</a>
                 </h3>
                			<p class = "loc">여행 지역 : ${i.loc}</p>
                			<p class = "term">여행 기간 : ${i.term}</p>
                 		<p class = "price"><span>가격 : </span><span class="testEle">${i.price}</span></p>
-  
-        </div>
-        </c:forEach>
+
            
+            </div>
+            </div>
+           
+            </c:forEach> 
+     
         <!-- /.row -->
 
         <hr>

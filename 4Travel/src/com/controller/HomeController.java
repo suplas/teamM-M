@@ -26,12 +26,17 @@ public class HomeController extends HttpServlet {
 		String target ="";
 		PackageBiz service = new PackageBiz();
 		ReviewBoardBiz biz = new ReviewBoardBiz();
+		PackageThirdDTO dto = new PackageThirdDTO();
+		
+	
 		try {
 			List<PackageThirdDTO> list = service.packageNewlist();
 			request.setAttribute("Plist", list);
 			target="main.jsp";
 			List<ReviewBoardDTO> list2 = biz.bestredcnt();
 			request.setAttribute("Plist2", list2);
+		
+			
 		} catch (CommonException e) {
 			e.printStackTrace();
 			target="error.jsp";
