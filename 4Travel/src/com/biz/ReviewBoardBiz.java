@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -57,7 +58,6 @@ public class ReviewBoardBiz {
 	}	
 	
 	public ReviewBoardDTO boardRetrieve(int num){
-		boardReadcnt(num);
 		SqlSession session=MySqlSessionFactory.openSession();
 		ReviewBoardDTO dto=null;
 		try{

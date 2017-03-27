@@ -104,8 +104,7 @@ $(document).ready(function(){
 				alert("전화번호는 숫자만 입력해주세요.");
 				$("#phone2").focus();
 				check=false;
-			}else if(!$.isNumeric($("#phone3").val()))
-			{
+			}else if(!$.isNumeric($("#phone3").val())){
 				alert("전화번호는 숫자만 입력해주세요.");
 				$("#phone3").focus();
 				check=false;
@@ -159,7 +158,7 @@ $(document).ready(function(){
 	<form action="MemberJoinController">
 	이름 (한글, 예 홍길동) <br>
 	<input type="text" name="username" id="username"><br><br>
-	 생일 <input type="date" name="birth" id="birth" max="2017-03-27" min="1900-01-01"><br><br>
+	 생년원일 <input type="date" name="birth" id="birth" max="2017-03-27" min="1900-01-01"><br><br>
 	아이디<span id="reg_id"></span><br>
 	<input type ="text" name="userid" id="userid" name="userid">
 	<span id="result"></span><br>
