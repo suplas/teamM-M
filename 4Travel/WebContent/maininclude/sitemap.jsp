@@ -4,10 +4,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#package").hover(function(event) {
+		$("ul").css("display","none");
+		$("#package").on("mouseover",function(event) {	
+			$("ul").css("display","table");
 			$("ul").toggle();
-		
 		});
+		$("ul").css("padding","0px;");
+		
 	});
 			</script>
   <div class="container">
@@ -15,13 +18,13 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Sidebar Page
-                    <small>Subheading</small>
+                <h1 class="page-header">Site Map
+                    <small>한눈에 사이트 보기</small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="Home">Home</a>
                     </li>
-                    <li class="active">Sidebar Page</li>
+                    <li class="active">Site Map</li>
                 </ol>
             </div>
         </div>
@@ -33,11 +36,11 @@
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="index.html" class="list-group-item">Home</a>
-                    <a href="about.html" class="list-group-item" id = "package">패키지</a>
-                    <ul style="display: none;">
-                    <li class="list-group-item">동남아/대만</li>
-                    <li class="list-group-item">중국/홍콩</li>
-                    <li class="list-group-item">일본</li>
+                    <a href="#" class="list-group-item" id = "package">패키지</a>
+                    <ul>
+                    <a href ="PackageFirstALLController?loc=동남아"><li class="list-group-item">동남아/대만</li></a>
+                    <a href ="PackageFirstALLController?loc=중국"><li class="list-group-item">중국/홍콩</li></a>
+                    <a href ="PackageFirstALLController?loc=일본"><li class="list-group-item">일본</li></a>
                     <li class="list-group-item">유럽</li>
                     <li class="list-group-item">괌/사이판</li>
                     <li class="list-group-item">남태평양</li>
