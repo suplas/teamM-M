@@ -2,6 +2,7 @@ package com.biz;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -56,6 +57,21 @@ public class PackageBiz {
 			session.close();
 		}
 		return list;
+	}
+	public int selectCountList(String loc) throws CommonException{
+		SqlSession session=MySqlSessionFactory.openSession();
+		
+		int cnt = 0;
+		try{
+			cnt = session.selectOne(namespace+"selectCountList",loc);
+		
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new CommonException("패키지리스트 불러오기 실패");
+		}finally {
+			session.close();
+		}
+		return cnt;
 	}
 	
 	public List<PackageThirdDTO> packageNewlist() throws CommonException{

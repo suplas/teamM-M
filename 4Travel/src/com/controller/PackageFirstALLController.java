@@ -21,10 +21,22 @@ public class PackageFirstALLController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String loc = request.getParameter("loc");
-		System.out.println(loc);
+		int page=0;
+		int totalPage = 0;
+		if(request.getParameter("page")==""||request.getParameter("page")==null){//페이지번호가 없으면 기본값 1 삽입			
+			page = 1;			
+		}else{
+			page = Integer.parseInt(request.getParameter("page"));
+		}
 		String target ="";
 		PackageBiz service = new PackageBiz();
+		
+		
+		//System.out.println(loc);
+	
 		try {
+			totalPage = service.selectCountList(loc);
+			System.out.println(totalPage+"//////sisisisi");
 			List<PackageFirstDTO> list = service.countryAllList(loc);
 			request.setAttribute("Plist", list);
 	
