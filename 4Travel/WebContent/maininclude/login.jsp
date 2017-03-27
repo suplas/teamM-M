@@ -36,15 +36,11 @@
         <div class="row">
             <div class="col-lg-12">
  <form action="LoginController">
- <pre>
-  아이디 <input type ="text" name="userid">
- 비밀번호<input type ="text" name="passwd">
- 	<!-- <input type="checkbox" name="idsave">아이디 저장 -->
- 		<input type = "submit" size="10" value="로그인">
- 		</pre>
- 	</form>
- 	<form action = "">
- 	<input type="button" value="아이디/비밀번호 찾기">
+ <pre width="500px">
+ <center> 아이디  <input type ="text" name="userid"></center>
+<center> 비밀번호<input type ="text" name="passwd"></center>
+</pre> 	<!-- <input type="checkbox" name="idsave">아이디 저장 -->
+ 		<input type = "submit" size="10" value="로그인"><br>
  	</form>
  	<form action ="SignUPController">
  	<input type="submit" value="회원가입">

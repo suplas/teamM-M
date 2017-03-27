@@ -4,7 +4,18 @@
   <script type="text/javascript">
 $(document).ready(function(){
 		var check=false;
+		var reg_id = /^[a-z0-9_-]{4,12}$/; 
+        var reg_pw = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/; 
+        var reg_email1 = /([\w-\.]+)/;
+		var reg_email2 = /((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 		$("#userid").on("keyup",function(){
+			if(!reg_id.test($("#userid").val())){ 
+				$("#reg_id").text("아이디는 3-15자 영문이여야 하며 \n" 
+                        +"마침표, '-', '_'를 제외한 문자는 사용하실수 없습니다.");
+				$("#reg_id").css("color","red");
+    		}else{
+    			$("#reg_id").empty();
+    		}
 			//ajax 통신
 			$.ajax({
 				type:"get",
@@ -15,22 +26,40 @@ $(document).ready(function(){
 				},
 				success:function(responseData,status,xhr){
 					$("#result").text(responseData);
+					if($.trim(responseData)=="아이디 사용 가능"){
+						$("#result").css("color","blue");
+					}else{
+						$("#result").css("color","red");
+					}
 				},
 				error:function(error){
 					console.log(error);
 				}
 			}); //end ajax
 		});//end userid event
+		$("#passwd").on("keyup",function(){
+			if(!reg_pw.test($("#passwd").val())){ 
+				$("#reg_pw").text('비밀번호 형식이 잘못되었습니다.\n' 
+	                    +'(영문,숫자를 혼합하여 6~20자 이내)');
+				$("#reg_pw").css("color","red");
+			}else{
+				$("#reg_pw").empty();
+			} 
+
+		});//end pw event
 		
-		$("#passwdconfirm").on("keyup",function(){
+		$("#passwdconfirm").on("blur",function(){
 			if($("#passwd").val()==$("#passwdconfirm").val()){
 					$("#confirm").text("비밀 번호 일치");
+					$("#confirm").css("color","blue");
 			}else{
 				$("#confirm").text("비밀 번호 불일치 비밀번호를 확인해주세요.");
+					$("#confirm").css("color","red");
+					$("#passwdconfirm").val("");
 			}
-		});//end confirm event
+		});//end pw confirm event
+		
 		$("#emailSelect").on("change",function(){
-			console.log($("#email2"));
 		if($("#emailSelect").val()=='직접입력'){
 			$("#email2").focus();	
 			$("#email2").val("");
@@ -47,38 +76,46 @@ $(document).ready(function(){
 				alert("공란 없이 입력해주세요");
 				$(this).focus();
 				check=false;
+			}else if(!$.isEmptyObject($("#reg_id").text())){
+				alert("유효하지 않는 ID 입니다");	
+				$("#userid").focus();
+				check=false;
+			}else if($.trim($("#result").text())=="아이디 중복 사용불가"){
+				alert("중복된 ID 입니다");
+				$("#userid").focus();
+				check=false;
+			}else if(!$.isEmptyObject($("#reg_pw").text())){
+				alert("유효하지 않는 비밀번호 입니다");	
+				$("#passwd").focus();
+				check=false;
+			}else if($("#passwd").val()!=$("#passwdconfirm").val()){
+				alert("비밀번호를 확인해주세요");
+				$("#passwdconfirm").focus();
+				check=false;
+			}else if(!reg_email1.test($("#email1").val())){ 
+				alert("유효하지 않은 email 형식 입니다");
+				$("#email1").focus();
+				check=false;
+			}else if(!reg_email2.test($("#email2").val())){ 
+				alert("유효하지 않은 email 형식 입니다");
+				$("#email2").focus();
+				check=false;
+			}else if(!$.isNumeric($("#phone2").val())){
+				alert("전화번호는 숫자만 입력해주세요.");
+				$("#phone2").focus();
+				check=false;
+			}else if(!$.isNumeric($("#phone3").val()))
+			{
+				alert("전화번호는 숫자만 입력해주세요.");
+				$("#phone3").focus();
+				check=false;
 			}else{
 				check=true;
 			}
 				return check;
 		});//end each
-console.log($.trim($("#result").text()));	
-console.log($.trim($("#result").text())=="아이디 중복 사용불가");	
 		//other checking
-		if($.trim($("#result").text())=="아이디 중복 사용불가"){
-			alert("유효하지 않는 ID 입니다");
-			$("#userid").focus();
-			check=false;
-		}
-		if($.trim($("#confirm").text())=='비밀 번호 불일치 비밀번호를 확인해주세요.'){
-			alert("비밀번호를 확인해주세요");
-			$("#passwdconfirm").focus();
-			check=false;
-		}
-		if(!$.isNumeric($("#phone2").val()))
-		{
-			console.log($("#phone2").val());
-			alert("전화번호는 숫자만 입력해주세요.");
-			$("#phone2").focus();
-			check=false;
-		}else if(!$.isNumeric($("#phone3").val()))
-		{
-			console.log($("#phone3").val());
-			alert("전화번호는 숫자만 입력해주세요.");
-			$("#phone3").focus();
-			check=false;
-		}
-		console.log(check);
+		
 		if(check){
 			alert("가입을 환영합니다");
 		return;
@@ -118,19 +155,15 @@ console.log($.trim($("#result").text())=="아이디 중복 사용불가");
 
 </span>
 <br>
-약관 동의 
-<div>
-	약관 등록<br>
-	</div>
 	
 	<form action="MemberJoinController">
 	이름 (한글, 예 홍길동) <br>
 	<input type="text" name="username" id="username"><br><br>
-	 생일 <input type="date" name="birth" id="birth"><br><br>
-	아이디<Br>
+	 생일 <input type="date" name="birth" id="birth" max="2017-03-27" min="1900-01-01"><br><br>
+	아이디<span id="reg_id"></span><br>
 	<input type ="text" name="userid" id="userid" name="userid">
 	<span id="result"></span><br>
-	비밀번호<br>
+	비밀번호<span id="reg_pw"></span><br>
 	<input type="password" id="passwd" name="passwd"><br>
 	비밀번호 확인<br>
 	<input type="password" id="passwdconfirm" name="passwdconfirm">  &nbsp;&nbsp;&nbsp;
@@ -193,6 +226,7 @@ console.log($.trim($("#result").text())=="아이디 중복 사용불가");
 	<input type="text" name="phone2" id="phone2"> - 
 	<input type = "text" name="phone3" id="phone3"><br>
 	<input type ="submit" value="회원가입" name="sub">
+	<input type ="reset" value="취소" name="res">
 	</form>
             </div>
         </div>
