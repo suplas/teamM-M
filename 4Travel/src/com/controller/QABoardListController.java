@@ -17,19 +17,8 @@ import com.exception.CommonException;
 @WebServlet("/QABoardListController")
 public class QABoardListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String target="";
-		QABoardBiz biz=new QABoardBiz();
-		
-		try {
-			List<QABoardDTO> list=biz.QABoardSelect();
-			request.setAttribute("QAlist", list);
-			target="FAQBoard.jsp";
-		} catch (CommonException e) {
-			target="error.jsp";
-			e.printStackTrace();
-		}
-		
-		RequestDispatcher dis=request.getRequestDispatcher(target);
+	
+		RequestDispatcher dis=request.getRequestDispatcher("FAQBoard.jsp");
 		dis.forward(request, response);
 	}
 
