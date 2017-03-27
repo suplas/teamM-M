@@ -3,6 +3,24 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".content").css("text-align","center");
+		
+		$(".title").css("text-align","center");
+		
+		$("#signup").css("position","absolute");
+		$("#signup").css("top","134px");
+		$("#signup").css("left","620px");
+		
+		$("#login").css("position","absolute");
+		$("#login").css("left","540px");
+		
+	});
+	</script>
+
 <c:if test="${loginFail != null }">
   <script type="text/javascript">
   var x= '${loginFail}';
@@ -20,9 +38,11 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
+            <div class = title>
                 <h1 class="page-header">LOGIN
                     <small>4Travel</small>
                 </h1>
+                </div>
                 <ol class="breadcrumb">
                     <li><a href="Home">Home</a>
                     </li>
@@ -35,16 +55,18 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-lg-12">
+            <div class = content>
  <form action="LoginController">
  <pre width="500px">
  <center> 아이디  <input type ="text" name="userid"></center>
 <center> 비밀번호<input type ="text" name="passwd"></center>
 </pre> 	<!-- <input type="checkbox" name="idsave">아이디 저장 -->
- 		<input type = "submit" size="10" value="로그인"><br>
+ 		<input type = "submit" size="10" value="로그인" id ="login"><br>
  	</form>
  	<form action ="SignUPController">
- 	<input type="submit" value="회원가입">
+ 	<input type="submit" value="회원가입" id = "signup">
  	</form>
+ 	</div>
             </div>
         </div>
         <!-- /.row -->
