@@ -14,7 +14,7 @@
 			$("#twodiv").toggle().css("display","none");
 		});
 		$("#twodiv").on("mouseout",function(event) {
-			$("#twodiv").toggle();
+			$("#twodiv").toggle(); 
 		});
 		
 		$(".twoli").css("font-size", "12px");
