@@ -19,13 +19,13 @@
             <div class="item">
                 <div class="fill" style="background-image:url('images/cherryblossoms.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 2</h2>
+                    <h4>우에노 공원 / 신주쿠교엔 – 도쿄</h4>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('images/cherryblossoms3.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Caption 3</h2>
+                    <h4>히로사키 공원, 히로사키, 아오모리</h4>
                 </div>
             </div>
         </div>

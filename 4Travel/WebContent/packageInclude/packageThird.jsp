@@ -3,6 +3,15 @@
      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".img-responsive").css("width","750px");
+		$(".img-responsive").css("height","420px");
+		
+	});
+	</script>
 <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
@@ -38,13 +47,13 @@
                     
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="img-responsive" src="images/${i.image1}.png" alt="그림1">
+                            <img class="img-responsive" src="images/${i.image1}.jpg" alt="그림1">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="images/${i.image2}.png" alt="그림2">
+                            <img class="img-responsive" src="images/${i.image2}.jpg" alt="그림2">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="images/${i.image3}.png" alt="그림3">
+                            <img class="img-responsive" src="images/${i.image3}.jpg" alt="그림3">
                         </div>
                     </div>
 
