@@ -13,47 +13,84 @@
 		
 		$(".testEle").css("color","red");
 		$(".fontcolor").css("color","black");
-		/* $(".fontcolor").css("background-color","lightpink"); */
+	
+		$(".col-md-4").css("top","20px");
+		
+	
 	});
 		
 	
-	setInterval(function(){
+/* 	setInterval(function(){
 		$(".testEle").toggle();
-		}, 500);
+		}, 500); */
 	
 			</script>
         <!-- Marketing Icons Section -->
+        <br>
+        <div class="marquee"> 
+           <marquee bgcolor="#f0f0f0" >  
+           	<font color="black"><h3>공지사항 입니다.</h3></font> 
+           </marquee>
+           
+           </div>
+           
+         <h1 class="page-header">
+                    	베스트 여행 후기 	
+         </h1>
+         
+     <c:forEach var="BestReview" items="${Plist2}"> 
+        <div >
+               
+        	<div class="col-md-4" id="bestReview">
+                <div class="panel panel-default">
+                  <!--   <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i>베스트 여행후기</h4>
+                    </div> -->
+        	 <div class="panel-body">
+        	 <p><a href="ReviewBoardDetailController?num=${BestReview.num}"><img  class="newpackage" src="/4Travel/images/${BestReview.image1}"></img></a><br><br>
+                        	<span>타이틀 : </span><span class="testEle">${BestReview.title}</span></p>
+                        	작성자 : ${BestReview.userid}<br>
+                        	여행지 : ${BestReview.travelNation}/${BestReview.travelLoc}<br>
+                        	<span>조회수 : </span><span class="testEle">${BestReview.readcnt}</span></p>
+        	</div>
+        	</div>
+        	</div>
+        </div>
+        </c:forEach>
+        
          <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    	최신 소식 
+                    	추천 패키지 
                 </h1>
             </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+             
+            <c:forEach var="i" items="${Plist}"> 
+            <div class="col-md-4"> 
+                 <div class="panel panel-default"> 
+                    <!--  <div class="panel-heading"> 
                         <h4><i class="fa fa-fw fa-check"></i>추천 패키지</h4>
-                    </div>
+                    </div> -->
                     <div class="panel-body">
     
-			<c:if test="${session.login ==''}">
-					최근 본 패키지가 없습니다.
-					${session.login }
-			</c:if>	
-				<c:if test="${session.login !=''}">
-				
-				<a href="PackageThirdListController?packagename=${Plist[0].packagename}&packageno=${Plist[0].packageno}">
-                        <p><img  class="newpackage" src="images/${Plist[0].doorimg}.jpg"></img></a><br><br>
-                        	패키지 명 : ${Plist[0].packagename}<br>
-                        	출발날짜 : ${Plist[0].startdate}<br>
-                        	도착날짜 : ${Plist[0].lastdate}<br>
-                        	<span>가격 : </span><span class="testEle">${Plist[0].price}</span></p>
-                        <a href="PackageThirdListController?packagename=${Plist[0].packagename}&packageno=${Plist[0].packageno}" class="btn btn-default">보러가기</a>
-				</c:if>
+				<a href="PackageThirdListController?packagename=${i.packagename}&packageno=${i.packageno}">
+                        <p><img  class="newpackage" src="images/${i.doorimg}.jpg"></img></a><br><br>
+                        	패키지 명 : ${i.packagename}<br>
+                        	출발날짜 : ${i.startdate}<br>
+                        	도착날짜 : ${i.lastdate}<br>
+                        	<span>가격 : </span><span class="testEle">${i.price}</span></p>
                     </div>
-                </div>
+               </div>
+             </div>
+              </c:forEach>
+           
+             </div>
+           
+           
+            <%-- <div class="col-md-4">
             </div>
-            <div class="col-md-4">
+            
+            <!-- div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-gift"></i> 공지사항</h4>
@@ -63,8 +100,8 @@
                         <a href="#" class="btn btn-default">보러가기</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
+            </div> -->
+            <%-- <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-compass"></i>여행후기</h4>
@@ -80,13 +117,13 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>  --%>
         <!-- /.row -->
 
         <!-- Portfolio Section -->
         
         <!-- Features Section -->
-        <div class="row">
+        <%-- <div class="row">
             <div class="col-lg-12">
                 <h2 class="page-header">이달의 여행지</h2>
             </div>
@@ -114,10 +151,7 @@
                     <li>가격 : ${Plist[1].price}</li> <a class="btn btn-lg btn-default btn-block" href="PackageThirdListController?loc=${Plist[1].loc}&packagename=${Plist[1].packagename}"><font class="fontcolor">관련 패키지 보러 가기</font></a>
                 </ul>
             </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="images/cherryblossoms.jpg" alt="">
-            </div>
-        </div>	
+         --%>
         <!-- /.row -->
 
         <hr>

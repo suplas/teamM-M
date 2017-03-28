@@ -16,11 +16,11 @@ import com.exception.CommonException;
 public class ReviewBoardBiz {
 	String namespace="com.fortravel.ReviewBoardMapper.";
 	
-	public List<ReviewBoardDTO> bestredcnt() throws CommonException{
+	public List<ReviewBoardDTO> bestredcnt(int num) throws CommonException{
 		SqlSession session=MySqlSessionFactory.openSession();
 		List<ReviewBoardDTO> list=null;
 		try{
-		list=session.selectList(namespace+"bestredcnt");
+		list=session.selectList(namespace+"bestredcnt",num);
 		}catch(Exception e){
 			System.out.println("불러오기실패");
 			throw new CommonException("게시판 불러오기 실패");
