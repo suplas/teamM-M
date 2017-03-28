@@ -14,9 +14,6 @@
 		$(".testEle").css("color","red");
 		$(".fontcolor").css("color","black");
 	
-		$(".col-md-4").css("top","20px");
-		
-	
 	});
 		
 	
@@ -33,7 +30,7 @@
            </marquee>
            
            </div>
-           
+    
          <h1 class="page-header">
                     	베스트 여행 후기 	
          </h1>

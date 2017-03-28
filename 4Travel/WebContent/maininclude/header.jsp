@@ -11,22 +11,25 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
+            <a href = "#">
                 <div class="fill" style="background-image:url('images/cherryblossoms.2.jpg');"></div>
                 <div class="carousel-caption">
                     <h4>마루야마 공원 / 철학의 길 – 교토</h4>
-                </div> 
+                </div></a> 
             </div>
             <div class="item">
+            <a href = "#">
                 <div class="fill" style="background-image:url('images/cherryblossoms.jpg');"></div>
                 <div class="carousel-caption">
                     <h4>우에노 공원 / 신주쿠교엔 – 도쿄</h4>
-                </div>
+                </div></a>
             </div>
             <div class="item">
+            <a href = "#">
                 <div class="fill" style="background-image:url('images/cherryblossoms3.jpg');"></div>
                 <div class="carousel-caption">
                     <h4>히로사키 공원, 히로사키, 아오모리</h4>
-                </div>
+                </div></a>
             </div>
         </div>
 
