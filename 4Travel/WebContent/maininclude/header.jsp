@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<scriptsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#myCarousel").css("top","81px");
+});
+
+</script>
  <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -12,23 +19,23 @@
         <div class="carousel-inner">
             <div class="item active">
             <a href = "#">
-                <div class="fill" style="background-image:url('images/cherryblossoms.2.jpg');"></div>
+                <div class="fill" style="background-image:url('images/배너1.jpg');"></div>
                 <div class="carousel-caption">
-                    <h4>마루야마 공원 / 철학의 길 – 교토</h4>
+                    
                 </div></a> 
             </div>
             <div class="item">
             <a href = "#">
-                <div class="fill" style="background-image:url('images/cherryblossoms.jpg');"></div>
+                <div class="fill" style="background-image:url('images/배너2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h4>우에노 공원 / 신주쿠교엔 – 도쿄</h4>
+                  
                 </div></a>
             </div>
             <div class="item">
             <a href = "#">
-                <div class="fill" style="background-image:url('images/cherryblossoms3.jpg');"></div>
+                <div class="fill" style="background-image:url('images/배너3.jpg');"></div>
                 <div class="carousel-caption">
-                    <h4>히로사키 공원, 히로사키, 아오모리</h4>
+                     
                 </div></a>
             </div>
         </div>

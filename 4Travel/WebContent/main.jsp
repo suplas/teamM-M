@@ -17,7 +17,9 @@
 
 </head>
 <body>
-
+<div>
+asdasd
+</div>
 <jsp:include page= "maininclude/navi.jsp" flush="true" />
 <jsp:include page= "maininclude/header.jsp" flush="true" />
 <jsp:include page="maininclude/body.jsp" flush="true" />

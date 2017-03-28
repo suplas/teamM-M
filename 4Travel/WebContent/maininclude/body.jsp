@@ -13,6 +13,10 @@
 		
 		$(".testEle").css("color","red");
 		$(".fontcolor").css("color","black");
+		
+		$("#002").css("left","65%");
+		$("#002box").css("background-color","orange");
+		$("#002box").css("color","white"); 
 	
 	});
 		
@@ -25,15 +29,15 @@
         <!-- Marketing Icons Section -->
         <br>
         <div class="marquee"> 
-           <marquee bgcolor="#f0f0f0" >  
-           	<font color="black"><h3>공지사항 입니다.</h3></font> 
+           <marquee>   
+           	<font color="black"><h3>환율 정보 api</h3></font>  
            </marquee>
            
            </div>
     
-         <h1 class="page-header">
-                    	베스트 여행 후기 	
-         </h1>
+         <h3 class="page-header">
+                 <font color="orange">BEST 여행 후기</font> 	 
+         </h3>
          
      <c:forEach var="BestReview" items="${Plist2}"> 
         <div >
@@ -57,9 +61,9 @@
         
          <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">
-                    	추천 패키지 
-                </h1>
+                <h3 class="page-header">
+                    	<font color="orange">추천 패키지</font> 
+                </h3> 
             </div>
              
             <c:forEach var="i" items="${Plist}"> 
@@ -157,10 +161,10 @@
         <div class="well">
             <div class="row">
                 <div class="col-md-8">
-                    <p>고객지원 센터</p>
+                    <p><font color="orange">고객지원 센터</font></p>
                 </div>
-                <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="FAQBoard.jsp">02-000-0000</a>
+                <div class="col-md-4" id="002">
+                    <a class="btn btn-lg btn-default btn-block " id="002box" href="FAQBoard.jsp">02-000-0000</a>
                 </div>
             </div>
         </div>

@@ -1874,7 +1874,8 @@ pre code {
 	position: relative;
 	min-height: 1px;
 	padding-right: 15px;
-	padding-left: 15px
+	padding-left: 15px;
+ 
 }
 
 .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
@@ -2264,7 +2265,7 @@ pre code {
 		width: 75%
 	}
 	.col-md-8 {
-		width: 66.66666667%
+		width: 100%
 	}
 	.col-md-7 {
 		width: 58.33333333%
@@ -2573,7 +2574,7 @@ table {
 caption {
 	padding-top: 8px;
 	padding-bottom: 8px;
-	color: #777;
+	color: 	
 	text-align: left
 }
 
@@ -3822,7 +3823,8 @@ tbody.collapse.in {
 	border: 1px solid rgba(0, 0, 0, .15);
 	border-radius: 4px;
 	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-	box-shadow: 0 6px 12px rgba(0, 0, 0, .175)
+	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	
 }
 
 .dropdown-menu.pull-right {
@@ -3834,7 +3836,7 @@ tbody.collapse.in {
 	height: 1px;
 	margin: 9px 0;
 	overflow: hidden;
-	background-color: #e5e5e5
+	background-color: #ffb805
 }
 
 .dropdown-menu>li>a {
@@ -3850,7 +3852,7 @@ tbody.collapse.in {
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
 	color: #262626;
 	text-decoration: none;
-	background-color: #f5f5f5
+	background-color: #ffb805
 }
 
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover
@@ -4897,7 +4899,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover
 	{
-	color: #5e5e5e;
+	color: #5ee5e5;
 	background-color: transparent
 }
 
@@ -4996,8 +4998,10 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 
 .navbar-inverse {
-	background-color: #222;
-	border-color: #080808
+	background-color: #ffa70b;
+
+	border-color: #ffa70b;
+
 }
 
 .navbar-inverse .navbar-brand {

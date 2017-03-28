@@ -21,7 +21,7 @@
 <jsp:include page="packageInclude/packageThird.jsp" flush="true"/>
  <footer>
  <hr>
-            <div class="row" style="background-color: black;">
+            <div class="row" >
             
                 <div class="col-lg-12">
                 

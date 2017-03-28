@@ -35,11 +35,28 @@
 		$("#subul").css("left","50px");
 		$("#subul").css("width","600px");
 		$("#subul").css("height","600px	");
-
+		 $(".dropdown-toggle").css("color","white");  
+		 $("#navitop").css("top","100px");
+	});
+	$(window).scroll(function(){
+	
+		var sc = $(document).scrollTop();
+		var dHeight = $("body").height();
+		var wHeight = $(window).height();
+		console.log(sc);
+		console.log($("#navitop"));
+		if(sc > 100){
+			$("#navitop").css("top","0px");
+			console.log("if"); 
+		}else if (sc < 100){
+		$("#navitop").attr("style","top:100px");   
+		/* $("#navitop").css("top","100"); */
+		console.log("else");
+		}
 	});
 </script>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navitop"> 
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -49,7 +66,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand"  href="Home">4Travel</a>
+			<a class="navbar-brand"  href="Home"><font color="white">a4Travel</font></a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		
