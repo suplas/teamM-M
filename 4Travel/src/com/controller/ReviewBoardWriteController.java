@@ -46,6 +46,7 @@ public class ReviewBoardWriteController extends HttpServlet {
 		List<FileItem> items = null; // 업로드한 파일 정보
 		try {
 			items = upload.parseRequest(request);
+			System.out.println("아이템즈"+items);
 		} catch (FileUploadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -55,7 +56,7 @@ public class ReviewBoardWriteController extends HttpServlet {
 		String fieldName = null;
 		String fieldValue = null;
 		long fileSize = 0;
-		String image1 = null;
+		String image1 = "";
 		while (ite.hasNext()) {
 			FileItem fileItem = ite.next();
 			System.out.println(fileItem);
@@ -65,7 +66,7 @@ public class ReviewBoardWriteController extends HttpServlet {
 				map.put(fieldName, fieldValue);
 				System.out.println("if 파일 네임:"+fieldName+"\t"+"if필드 밸류"+fieldValue);
 			} else { //type = "file" true
-				image1 = fileItem.getName();  
+				image1 += fileItem.getName()+"/";  
 				fileSize = fileItem.getSize();
 				map.put("image1", image1);
 				System.out.println("파일네임 : "+image1);
@@ -75,6 +76,7 @@ public class ReviewBoardWriteController extends HttpServlet {
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					System.out.println("파일 업로드 오류");
 				}
 			}
 		}// end while
