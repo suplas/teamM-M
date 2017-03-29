@@ -38,10 +38,10 @@
                 readURL(this);
                 $(this).clone(true).insertAfter(this);
                 $(this).css("display","none");
-                $("#realFile")[0].files[$(".imgInp").length-1]=$(this)[0].files[0];
-                $("#realFile")[0].files.length=$(".imgInp").length; 
-                console.log($("#realFile")[0].files);
-                console.log($("#realFile")[0].files.length);
+                //$("#realFile")[0].files[$(".imgInp").length-1]=$(this)[0].files[0];
+                //$("#realFile")[0].files.length=$(".imgInp").length; 
+                //console.log($("#realFile")[0].files);
+                //console.log($("#realFile")[0].files.length);
             });
             $("#realFile").change(function(){
                 //alert(this.value); //선택한 이미지 경로 표시
